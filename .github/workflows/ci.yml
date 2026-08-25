@@ -21,6 +21,9 @@ jobs:
           java-version: '21'
           cache: maven
 
+      - name: Verificar Docker
+        run: docker info
+
       - name: Compilar
         run: mvn -B clean compile
 
