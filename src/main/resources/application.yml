@@ -20,7 +20,12 @@ server:
 jwt:
   secret: ${JWT_SECRET:change-me-in-production-please-use-a-long-random-secret}
   expiration-minutes: 60
-  refresh-expiration-days: 7
+  refresh-expiration-days: 7 # TODO: não implementado ainda
+
+app:
+  admin:
+    email: ${ADMIN_EMAIL:admin@incidenttracker.local}
+    password: ${ADMIN_PASSWORD:changeme123}
 
 springdoc:
   swagger-ui:
@@ -42,8 +47,3 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   level:
     com.seunome.incidenttracker: DEBUG
-
-app:
-  admin:
-    email: ${ADMIN_EMAIL:admin@incidenttracker.local}
-    password: ${ADMIN_PASSWORD:changeme123}
