@@ -42,3 +42,8 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
   level:
     com.seunome.incidenttracker: DEBUG
+
+app:
+  admin:
+    email: ${ADMIN_EMAIL:admin@incidenttracker.local}
+    password: ${ADMIN_PASSWORD:changeme123}
