@@ -1,5 +1,6 @@
 package com.seunome.incidenttracker.exception;
 
+import jakarta.persistence.EntityNotFoundException;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,16 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(AccessDeniedException.class)
   public ResponseEntity<Map<String, Object>> handleAccessDenied(AccessDeniedException ex) {
     return buildResponse(HttpStatus.FORBIDDEN, "Você não tem permissão para essa ação");
+  }
+
+  @ExceptionHandler(EntityNotFoundException.class)
+  public ResponseEntity<Map<String, Object>> handleNotFound(EntityNotFoundException ex) {
+    return buildResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+  }
+
+  @ExceptionHandler(IllegalArgumentException.class)
+  public ResponseEntity<Map<String, Object>> handleConflict(IllegalArgumentException ex) {
+    return buildResponse(HttpStatus.CONFLICT, ex.getMessage());
   }
 
   @ExceptionHandler(MethodArgumentNotValidException.class)
