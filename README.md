@@ -245,4 +245,4 @@ especificos. Isso evita respostas de erro inconsistentes entre endpoints.
   YAML mas nao e consumida pelo codigo ainda)
 - [ ] Deploy na Azure (App Service ou Container Apps) com Key Vault
   para os segredos
-- [ ] ADRs documentando as decisoes de arquitetura
+- [x] ADRs documentando as decisoes de arquitetura
